@@ -12,7 +12,7 @@
 			"VARIANT": "3.10-bullseye",
 			// Options
 			"NODE_VERSION": "lts/*"
-		}
+		},
 	},
 
 	// Set *default* container specific settings.json values on container create.
@@ -39,6 +39,12 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
+
+	// Container environment variables.
+	"containerEnv": {
+		"APP_ID": "${localEnv:APP_ID}",
+		"BEARER_TOKEN": "${localEnv:BEARER_TOKEN}"
+	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
